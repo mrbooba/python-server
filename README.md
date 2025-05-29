@@ -2,7 +2,7 @@
 
 ## Description
 This is a Python server and its CLI client to manage events.
-This application is based 
+This application is based on :
 
 
 - FastAPI server for event CRUD (MongoDB)
