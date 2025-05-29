@@ -41,7 +41,6 @@ python cli/client.py remove --tags meeting
 ### Run tests
 
 \`\`\`
-pip install pytest
 pytest test/test_app.py
 
 or from docker
