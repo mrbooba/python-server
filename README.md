@@ -32,9 +32,10 @@ docker-compose down
 ### Use CLI client on command line
 
 \`\`\`
-pip install requests
-python cli/client.py add --start 1717000000 --tags meeting urgent
+python cli/client.py add --start 1717000000 --tags meeting urgent 
+
 python cli/client.py list
+
 python cli/client.py remove --tags meeting
 \`\`\`
 
