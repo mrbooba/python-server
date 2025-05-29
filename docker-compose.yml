@@ -1,0 +1,30 @@
+#version: "3.8"
+services:
+  server:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URL=mongodb://mongo:27017/
+      - MONGO_DB=event_db
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  test:
+    build: .
+    command: pytest test/test_app.py
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URL=mongodb://mongo:27017/
+      - MONGO_DB=event_db_test
+
+volumes:
+  mongo_data:
